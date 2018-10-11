@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+if __name__ == "__main__":
+    x = np.linspace(-math.pi/2, math.pi/2, 100)
+    y = 0.5+np.sin(x)
+    z = 0.5+0.724*x
+    z2 = 0.5+0.774*x
+    plt.plot(x,y,color='r')
+    plt.plot(x,z,color='b', linestyle='dashed')
+    plt.plt(x,z2,color='k', marker='o')
+    plt.show()
