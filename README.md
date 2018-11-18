@@ -12,4 +12,4 @@ If you are here for learning different concepts, please go ahead and refer any s
 ### Assignment 3 - Function Approximation (Practicum, Python)
 ### Assignment 4 - Differential Equations, Optimization (Practicum, Python, MATLAB)
 ### Assignment 5 - Calculus of Variations (Theory)
-### Assignemnt 6 - Convex Hulls, Computational Geometry (Practicum, Python)
+### Assignment 6 - Convex Hulls, Computational Geometry (Practicum, Python)
