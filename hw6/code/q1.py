@@ -1,10 +1,40 @@
 import numpy as np
-import sys
 import matplotlib.pyplot as plt
 import random
-from util import Point, Stack
 import functools
-# from scipy.spatial import ConvexHull
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def is_empty(self):
+        return (self.items == [])
+
+    def top(self):
+        return self.items[-1]
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def setX(self, x):
+        self.x = x
+
+    def setY(self, y):
+        self.y = y
 
 p0 = ""
 
