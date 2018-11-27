@@ -4,11 +4,13 @@ import sys
 
 def findConvexHull(points):
     points = np.array(points, dtype=np.float32)
-    if points.shape[0] < 2:
+    
+    if points.shape[0] < 3:
         print ("Minimum 3 points required")
         sys.exit(1)
 
-    points = points[np.lexsort(np.rot90(points))]
+    rotated_points = np.rot90(points)
+    points = points[np.lexsort(rotated_points)]
 
     lower, upper = [], []
     N = points.shape[0]
