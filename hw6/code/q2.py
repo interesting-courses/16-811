@@ -357,9 +357,9 @@ class VisibiltyGraph:
         curr_polys = []
         for polygon in self.polygons:
             curr_poly = []
-            for pt in polygon['convex_hull']:
-                for rbt in robot:
-                    curr_poly.append(pt + rbt)
+            for poly_pt in polygon['convex_hull']:
+                for robot_pt in robot:
+                    curr_poly.append(poly_pt + robot_pt)
             curr_polys.append(curr_poly)
 
         # form all the new polygons here
@@ -374,24 +374,11 @@ class VisibiltyGraph:
         # fire vg computation and base checks
         self.checkAndCompute()
 
-    def plotPolygonsAndPaths(self, robot = None, isRobot=False):
-        xmin, xmax = np.inf, -np.inf
-        ymin, ymax = np.inf, -np.inf
-        
+    def plotPolygonsAndPaths(self, robot = None, isRobot=False):        
         for i, poly in enumerate(self.original_polygons):
             poly_hull = poly['convex_hull']
             hull_x = poly_hull[:,0]
             hull_y = poly_hull[:,1]
-            
-            #compute plotting limits
-            if np.min(hull_x) < xmin:
-                xmin = np.min(hull_x)
-            if np.min(hull_y) < ymin:
-                ymin = np.min(hull_y)
-            if np.max(hull_x) > xmax:
-                xmax = np.max(hull_x)
-            if np.max(hull_y) > ymax:
-                ymax = np.max(hull_y)
             
             # actually plot the polygon
             hull_x = np.append(hull_x, hull_x[0])
@@ -420,8 +407,9 @@ class VisibiltyGraph:
                 hull_y = np.append(hull_y, hull_y[0])
                 plt.plot(hull_x, hull_y, "g-")
 
-        plt.xlim(xmin-2,xmax+2)
-        plt.ylim(ymin-2,ymax+2)
+        # print (xmin, xmax, ymin, ymax)
+        # plt.xlim(xmin-2,xmax+2)
+        # plt.ylim(ymin-2,ymax+2)
         plt.grid(True)
         plt.show()
 
