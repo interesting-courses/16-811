@@ -29,8 +29,12 @@ def findConvexHull(points):
     return hull
 
 if __name__ == "__main__":
-    points = np.random.rand(500, 2)
+    points = 120*np.random.rand(500, 2)+50
     hull = findConvexHull(points)
+    hull_x = hull[:,0]
+    hull_y = hull[:,1]
+    hull_x = np.append(hull_x, hull_x[0])
+    hull_y = np.append(hull_y, hull_y[0])
     plt.plot(points[:,0],points[:,1], 'bo')
-    plt.plot(hull[:,0], hull[:,1], 'r-')
+    plt.plot(hull_x, hull_y, 'r-')
     plt.show()

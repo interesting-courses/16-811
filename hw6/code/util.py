@@ -1,41 +1,29 @@
 import numpy as np
 
-class Stack:
-    def __init__(self):
-        self.items = []
+def readFile(filename):
+    points = []
+    with open(filename, "r") as f:
+        s = []
+        for line in f.readlines():
+            line = line.strip('\r\n')
+            if 'polygon' in line:
+                if s == []:
+                    pass
+                else:
+                    points.append(s)
+                    s = []
+                continue
+            s.append(list(map(float, line.split())))
+        else:
+            points.append(s)
 
-    def push(self, item):
-        self.items.append(item)
+    if "overlap" not in filename:
+        mode = "isolated"
+    else:
+        mode = "overlap"
 
-    def pop(self):
-        return self.items.pop()
+    return points, mode
 
-    def is_empty(self):
-        return (self.items == [])
-
-    def top(self):
-        return self.items[-1]
-
-class Point:
-    def __init__(self, x, y, polygonid = None):
-        self.x = x
-        self.y = y
-        self.polygonId = polygonid
-
-    def getX(self):
-        return self.x
-
-    def getY(self):
-        return self.y
-
-    def getPolygonId(self):
-        return self.polygonId
-
-    def setX(self, x):
-        self.x = x
-
-    def setY(self, y):
-        self.y = y
-
-    def setPolygonId(self, polygonid):
-        self.polygonId = polygonid
+points, mode = readFile('../data/overlapping.txt')
+# points, mode = readFile('../data/isolated.txt')
+print (points, mode)
