@@ -426,7 +426,7 @@ if __name__ == "__main__":
     start = np.array([0, 0])
     end = np.array([8, 8])
 
-    p = VisibiltyGraph(points, start, end)
-    p.findShortestPath()
-    print (p.shortestPath)
-    p.plotPolygonsAndPaths()
+    vg = VisibiltyGraph(points, start, end)
+    vg.findShortestPath()
+    print (vg.shortestPath)
+    vg.plotPolygonsAndPaths()

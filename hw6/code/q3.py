@@ -28,8 +28,8 @@ if __name__ == "__main__":
     # works with isolated case 1 and end = 20,20
     robot = np.array([[-1,-1],[-1,1],[0,1],[1,1],[1,-1]], np.float32)
     
-    p = VisibiltyGraph(points, start, end)
-    p.getMinkowskiSum(robot)
-    p.findShortestPath()
-    print (p.shortestPath)
-    p.plotPolygonsAndPaths(robot, isRobot=True)
+    vg = VisibiltyGraph(points, start, end)
+    vg.getMinkowskiSum(robot)
+    vg.findShortestPath()
+    print (vg.shortestPath)
+    vg.plotPolygonsAndPaths(robot, isRobot=True)
