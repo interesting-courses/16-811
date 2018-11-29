@@ -131,7 +131,6 @@ class VisibiltyGraph:
 
         overlap = self.checkOverlappingPolygons()
         if overlap:
-            print ('in here - computing checks')
             self.formVisibiltyGraph()
             self.recreateOverlappingPolygons()
 
@@ -176,7 +175,8 @@ class VisibiltyGraph:
             try:
                 poly_pts = self.polygons[polygon_id]['convex_hull']
             except Exception:
-                return
+                print ('No valid path exist as no visibility vertex is found!')
+                sys.exit(1)
             lngth = poly_pts.shape[0]
             
             for i in range(0, poly_pts.shape[0]):

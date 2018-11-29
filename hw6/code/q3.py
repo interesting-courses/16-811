@@ -23,10 +23,10 @@ if __name__ == "__main__":
     end = np.array([8, 8])
     
     # robot = np.array([[0,0],[0,0.5],[0.5,0]], np.float32)
-    # robot = np.array([[0,1],[-1,-1],[1,-1]], np.float32)
+    robot = np.array([[0,1],[-1,-1],[1,-1]], np.float32)
 
     # works with isolated case 1 and end = 20,20
-    robot = np.array([[-1,-1],[-1,1],[0,1],[1,1],[1,-1]], np.float32)
+    # robot = np.array([[-1,-1],[-1,1],[0,1],[1,1],[1,-1]], np.float32)
     
     vg = VisibiltyGraph(points, start, end)
     vg.getMinkowskiSum(robot)
