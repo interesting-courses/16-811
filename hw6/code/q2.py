@@ -407,9 +407,6 @@ class VisibiltyGraph:
                 hull_y = np.append(hull_y, hull_y[0])
                 plt.plot(hull_x, hull_y, "g-")
 
-        # print (xmin, xmax, ymin, ymax)
-        # plt.xlim(xmin-2,xmax+2)
-        # plt.ylim(ymin-2,ymax+2)
         plt.grid(True)
         plt.show()
 
