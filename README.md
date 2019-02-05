@@ -1,5 +1,5 @@
 # 16-811
-Assignments for Computer Vision (16-811) @CMU
+Assignments for Math Fundamentals for Robotics (16-811) @CMU
 
 All the assignments are solved using MATLAB (R2081_a) or Python 3.6.5 (Anaconda Distribution). 
 
